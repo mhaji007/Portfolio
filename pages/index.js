@@ -1,15 +1,14 @@
 import React from 'react';
-import Header from '../components/shared/Header';
+import BaseLayout from '../components/layouts/BaseLayout';
 
 class Index extends React.Component {
   render() {   
     return (
-      <div>
+      <BaseLayout>
       <h1>
       I am Index page
       </h1>
-      <Header/>
-      </div>
+      </BaseLayout>
     )
   }
 }

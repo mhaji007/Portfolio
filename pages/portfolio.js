@@ -1,15 +1,14 @@
 import React from 'react';
-import Header from '../components/shared/Header';
+import BaseLayout from '../components/layouts/BaseLayout';
 
 class Portfolio extends React.Component {
   render() {   
     return (
-    <div>
+    <BaseLayout>
       <h1>
       I am Portfolio page
       </h1>
-      <Header/>
-    </div>
+    </BaseLayout>
     )
   }
 }
