@@ -1,17 +1,17 @@
 import React from 'react';
 import Header from '../components/shared/Header';
 
-class Index extends React.Component {
+class Blogs extends React.Component {
   render() {   
     return (
-      <div>
+    <div>
       <h1>
-      I am Index page
+      I am Blogs page
       </h1>
       <Header/>
-      </div>
+    </div>
     )
   }
 }
 
-export default Index;
+export default Blogs;
