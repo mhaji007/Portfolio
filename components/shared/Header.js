@@ -21,6 +21,10 @@ class Header extends Component {
             <Link href="/cv">
                 <a> CV </a>
             </Link>
+
+            <style>
+
+            </style>
             </>
           );
     }
