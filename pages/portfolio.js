@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
 import axios from 'axios';
+import BasePage from '../components/BasePage';
 
 
 class Portfolio extends Component {
@@ -33,6 +34,7 @@ class Portfolio extends Component {
       const {portfolio} = this.props;
       return (
           <BaseLayout>
+            <BasePage>
               <h1>
                   I am Portfolio page
               </h1>
@@ -41,7 +43,7 @@ class Portfolio extends Component {
               </h1>
               <p>BODY: {portfolio.body} </p>
               <p>ID: {portfolio.id} </p>
-          
+            </BasePage>
           </BaseLayout>
         );
   }

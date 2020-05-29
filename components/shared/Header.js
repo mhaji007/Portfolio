@@ -11,6 +11,13 @@ import {
 
 import Link from 'next/link';
 
+const BsNavBrand = () => 
+    <Link href="/"> 
+        <a className = "navbar-brand port-navbar-brand">Mehdi Haijkhani</a>
+    </Link>
+
+
+
 const BsNavLink = props => {
     const { route, title } = props;
     return (
@@ -31,11 +38,7 @@ const Header = () =>  {
                     color="transparent"
                     dark
                     expand="md">
-                    <NavbarBrand>
-                    <Link  href="/">
-                    <a className="port-navbar-brand">Mehdi Hajikhani</a>      
-                    </Link>
-                    </NavbarBrand>
+                    <BsNavBrand/>
                     <NavbarToggler onClick={toggle}/>
                     <Collapse isOpen={isOpen} navbar="navbar">
                         <Nav className="ml-auto" navbar="navbar">
