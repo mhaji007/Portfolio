@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 const BsNavBrand = () => 
     <Link href="/"> 
-        <a className = "navbar-brand port-navbar-brand">Mehdi Haijkhani</a>
+        <a className = "navbar-brand port-navbar-brand">Mehdi Hajikhani</a>
     </Link>
 
 
