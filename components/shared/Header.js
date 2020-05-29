@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+
 import {
     Collapse,
     Navbar,
@@ -6,12 +7,6 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
 } from 'reactstrap';
 
 import Link from 'next/link';
@@ -20,37 +15,43 @@ const BsNavLink = props => {
     const { route, title } = props;
     return (
       <Link href={route}>
-        <a className="nav-link">{title}</a>
+        <a className="nav-link port-navbar-link">{title}</a>
       </Link>
     )
   }
 
-export default class Header extends React.Component {
+const Header = () =>  {
 
-    state = {isOpen: false}
-    toggle = () => this.setState({isOpen: !this.state.isOpen})
+    const [isOpen, setIsOpen] = useState(false);
+    const toggle = () => setIsOpen(!isOpen)
 
-    render() {
         return (
             <div>
-                <Navbar color="light" light="light" expand="md">
-                    <NavbarBrand href="/">Mehdi Hajikhani</NavbarBrand>
-                    <NavbarToggler onClick={this.toggle}/>
-                    <Collapse isOpen={this.isOpen} navbar="navbar">
+                <Navbar className="port-navbar port-default absolute"
+                    color="transparent"
+                    dark
+                    expand="md">
+                    <NavbarBrand>
+                    <Link  href="/">
+                    <a className="port-navbar-brand">Mehdi Hajikhani</a>      
+                    </Link>
+                    </NavbarBrand>
+                    <NavbarToggler onClick={toggle}/>
+                    <Collapse isOpen={isOpen} navbar="navbar">
                         <Nav className="ml-auto" navbar="navbar">
-                            <NavItem>
+                            <NavItem className = "port-navbar-item">
                                 <BsNavLink route="/" title="Home"/>
                             </NavItem>
-                            <NavItem>
+                            <NavItem className = "port-navbar-item">
                                 <BsNavLink route="/about" title="About"/>
                             </NavItem>
-                            <NavItem>
+                            <NavItem className = "port-navbar-item">
                                 <BsNavLink route="/portfolios" title="Portfolios"/>
                             </NavItem>
-                            <NavItem>
+                            <NavItem className = "port-navbar-item">
                                 <BsNavLink route="/blogs" title="Blogs"/>
                             </NavItem>
-                            <NavItem>
+                            <NavItem className = "port-navbar-item">
                                 <BsNavLink route="/cv" title="Cv"/>
                             </NavItem>
                         </Nav>
@@ -59,5 +60,6 @@ export default class Header extends React.Component {
             </div>
         );
 
-    }
 }
+
+export default Header;
