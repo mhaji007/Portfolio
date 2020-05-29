@@ -4,7 +4,6 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
 } from 'reactstrap';
@@ -17,11 +16,22 @@ const BsNavBrand = () =>
     </Link>
 
 
+const LoginLink = () => 
+<span className = "nav-link port-navbar-link clickable">
+    Login
+</span>
+
+const LogoutLink = () => 
+<span className = "nav-link port-navbar-link clickable">
+    Logout
+</span>
+
+
 
 const BsNavLink = props => {
-    const { route, title } = props;
+    const { title, href } = props;
     return (
-      <Link href={route}>
+      <Link href={href}>
         <a className="nav-link port-navbar-link">{title}</a>
       </Link>
     )
@@ -41,21 +51,29 @@ const Header = () =>  {
                     <BsNavBrand/>
                     <NavbarToggler onClick={toggle}/>
                     <Collapse isOpen={isOpen} navbar="navbar">
-                        <Nav className="ml-auto" navbar="navbar">
+                        <Nav  navbar="navbar">
                             <NavItem className = "port-navbar-item">
-                                <BsNavLink route="/" title="Home"/>
+                                <BsNavLink href="/" title="Home"/>
                             </NavItem>
                             <NavItem className = "port-navbar-item">
-                                <BsNavLink route="/about" title="About"/>
+                                <BsNavLink href="/about" title="About"/>
                             </NavItem>
                             <NavItem className = "port-navbar-item">
-                                <BsNavLink route="/portfolios" title="Portfolios"/>
+                                <BsNavLink href="/portfolios" title="Portfolios"/>
                             </NavItem>
                             <NavItem className = "port-navbar-item">
-                                <BsNavLink route="/blogs" title="Blogs"/>
+                                <BsNavLink href="/blogs" title="Blogs"/>
                             </NavItem>
                             <NavItem className = "port-navbar-item">
-                                <BsNavLink route="/cv" title="Cv"/>
+                                <BsNavLink href="/cv" title="Cv"/>
+                            </NavItem>
+                        </Nav>
+                        <Nav navbar className="ml-auto">
+                            <NavItem className = "port-navbar-item">
+                                <LoginLink/>
+                            </NavItem>
+                            <NavItem className = "port-navbar-item">
+                                <LogoutLink/>
                             </NavItem>
                         </Nav>
                     </Collapse>
