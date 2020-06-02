@@ -10,7 +10,7 @@ async function handlePosts (req, res) {
 
   } catch(e) {
     console.error(e);
-    res.status(error.status || 400).end('Api Error');
+    res.status(e.status || 400).end('Api Error');
   }
 
 }
