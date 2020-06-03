@@ -1,11 +1,13 @@
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import Link from 'next/link';
-import {useGetData} from '@/actions';
+import {useGetPosts} from '@/actions'; 
+//import {useGetData} from '@/actions'; // - used if not using SWR
 
 const Portfolios = () => {
 
-    const {data, error, loading} = useGetData('/api/v1/posts');
+   // const {data, error, loading} = useGetData('/api/v1/posts'); // - used if not using SWR
+   const {data, error, loading} = useGetPosts('/api/v1/posts');
 
     const renderPosts = (posts) => {
         return posts.map(
