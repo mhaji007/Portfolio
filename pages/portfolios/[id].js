@@ -1,14 +1,16 @@
 import BaseLayout from '@/components/layouts/BaseLayout';
-import axios from 'axios';
 import BasePage from '@/components/BasePage';
-import {useGetData} from '@/actions';
-import {useRouter} from 'next/actions';
+//import {useGetData} from '@/actions'; // -  used if not using SWR
+import {useGetPostById} from '@/actions';
+import {useRouter} from 'next/router';
 
 
 const Portfolio = () => {
     const router = useRouter();
-    const {data:portfolio, error, loading} = 
-    useGetData(router.query.id?`/api/v1/posts/${router.query.id}`:null);
+    //const {data:portfolio, error, loading} = 
+        //useGetData(router.query.id?`/api/v1/posts/${router.query.id}`:null); // -  used if not using SWR
+    const {data: portfolio, error, loading} =
+         useGetPostById(router.query.id);
     return (
         <BaseLayout>
             <BasePage>
