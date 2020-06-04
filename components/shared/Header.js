@@ -14,8 +14,10 @@ const LoginLink = () =>
     <a className="nav-link port-navbar-link clickable" href="/api/v1/login">Login</a>
 </span>
 
-const LogoutLink = () => <span className="nav-link port-navbar-link clickable">
-    Logout
+const LogoutLink = () =>
+// <span className="nav-link port-navbar-link clickable"> //Logout</span>
+<span >
+    <a className="nav-link port-navbar-link clickable" href="/api/v1/logout">Logout</a>
 </span>
 
 const BsNavLink = props => {
