@@ -17,7 +17,10 @@ const BsNavBrand = () =>
 
 
 const LoginLink = () => 
-<BsNavLink href="/api/v1/login" title="login"/>
+//<BsNavLink href="/api/v1/login" title="login"/>
+<span >
+<a className = "nav-link port-navbar-link clickable" href="/api/v1/login">Login</a>
+</span>
 
 const LogoutLink = () => 
 <span className = "nav-link port-navbar-link clickable">
