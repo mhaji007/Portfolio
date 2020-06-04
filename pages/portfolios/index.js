@@ -3,11 +3,15 @@ import BasePage from '@/components/BasePage';
 import Link from 'next/link';
 import {useGetPosts} from '@/actions'; 
 //import {useGetData} from '@/actions'; // - used if not using SWR
+import {useGetUser} from '@/actions/user';
 
 const Portfolios = () => {
 
-   // const {data, error, loading} = useGetData('/api/v1/posts'); // - used if not using SWR
-   const {data, error, loading} = useGetPosts('/api/v1/posts');
+  const {data, error, loading} = useGetPosts();
+  
+  // const {data, error, loading} = useGetData('/api/v1/posts'); // - used if not using SWR
+  
+   const {data:dataU, loading:loadingU} = useGetUser();
 
     const renderPosts = (posts) => {
         return posts.map(
@@ -26,7 +30,9 @@ const Portfolios = () => {
     }
 
     return (
-        <BaseLayout>
+        <BaseLayout
+        user ={dataU}
+        loading = {loadingU}>
             <BasePage>
                 <h1>
                     I am Portfolio Page

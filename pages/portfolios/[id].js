@@ -3,16 +3,22 @@ import BasePage from '@/components/BasePage';
 //import {useGetData} from '@/actions'; // -  used if not using SWR
 import {useGetPostById} from '@/actions';
 import {useRouter} from 'next/router';
+import {useGetUser} from '@/actions/user';
 
 
 const Portfolio = () => {
+    
     const router = useRouter();
     //const {data:portfolio, error, loading} = 
-        //useGetData(router.query.id?`/api/v1/posts/${router.query.id}`:null); // -  used if not using SWR
+    //useGetData(router.query.id?`/api/v1/posts/${router.query.id}`:null); // -  used if not using SWR
     const {data: portfolio, error, loading} =
-         useGetPostById(router.query.id);
+    useGetPostById(router.query.id);
+    const {data:dataU, loading:loadingU} = useGetUser();
+    
     return (
-        <BaseLayout>
+        <BaseLayout
+        user ={dataU}
+        loading = {loadingU}>
             <BasePage>
                 {loading && <p>Loading Data...</p>}
                 {error && <div className="alert alert-danger">{error.message}</div>}
