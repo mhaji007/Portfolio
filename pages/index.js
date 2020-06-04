@@ -1,10 +1,14 @@
 import BaseLayout from '@/components/layouts/BaseLayout';
 import {Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
+import {useGetUser} from '@/actions/user';
 
 const ROLES = ["Developer", "Student", "UFO enthusiast :)"]
 
 const Index = () => {
+
+    const {data, error, loading} = useGetUser();
+
     return (
         <BaseLayout className="cover">
             <div className="main-section">
