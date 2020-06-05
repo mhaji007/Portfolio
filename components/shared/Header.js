@@ -39,12 +39,12 @@ const Header = ({user, loading}) => {
             <Navbar
                 className="port-navbar port-default absolute"
                 color="transparent"
-                dark="dark"
+                dark
                 expand="md">
                 <BsNavBrand/>
                 <NavbarToggler onClick={toggle}/>
-                <Collapse isOpen={isOpen} navbar="navbar">
-                    <Nav navbar="navbar">
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav navbar>
                         <NavItem className="port-navbar-item">
                             <BsNavLink href="/" title="Home"/>
                         </NavItem>
@@ -64,7 +64,7 @@ const Header = ({user, loading}) => {
                             <BsNavLink href="/secret" title="Secret"/>
                         </NavItem>
                     </Nav>
-                    <Nav navbar="navbar" className="ml-auto">
+                    <Nav navbar className="ml-auto">
                         {
                             !loading && <> {
                                 user && <NavItem className="port-navbar-item">

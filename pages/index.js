@@ -51,13 +51,13 @@ const Index = () => {
                                 </h1>
                             </div>
                             <Typed
-                                loop="loop"
+                                loop
                                 strings={ROLES}
                                 typeSpeed={70}
                                 backSpeed={70}
                                 backDelay={1000}
                                 loopCount={0}
-                                showCursor="showCursor"
+                                showCursor
                                 className="self_typed"
                                 cursorChar="|"></Typed>
                             <div className="hero-welcome-bio">

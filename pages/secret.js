@@ -6,24 +6,12 @@ import {useGetUser} from '@/actions/user';
 import Redirect from '@/components/shared/Redirect';
 import withAuth from '@/components/hoc/withAuth';
 
-const Secret = () => {
-    const {data, loading} = useGetUser();
-    // const router = useRouter();  if not using the custom redirect component
-
-    if (loading) {
-        return <p>Loading...</p>
-    }
-    if (!data && typeof window !== 'undefined') {
-        // TODO: Improve return router.push('/api/v1/login'); return null;
-        return <Redirect to="/api/v1/login"/>
-
-    } else {
-
+const Secret = ({user, loading}) => {
         return (
-            <BaseLayout user={data} loading={loading}>
+            <BaseLayout user={user} loading={loading}>
                 <BasePage>
                     <h1>
-                        I am Secret page
+                        I am Secret page - {user.name}
                     </h1>
                 </BasePage>
             </BaseLayout>
@@ -31,7 +19,10 @@ const Secret = () => {
 
     }
 
-}
+    export default withAuth(Secret);
+
+
+
 
 
 // traditional syntax
@@ -50,5 +41,3 @@ const Secret = () => {
 
 
 
-
-export default withAuth(Secret);
