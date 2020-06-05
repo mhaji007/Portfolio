@@ -4,6 +4,7 @@ import {useGetUser} from '@/actions/user';
 // import {useRouter} from 'next/router'; if not using the custom redirect
 // component
 import Redirect from '@/components/shared/Redirect';
+import withAuth from '@/components/hoc/withAuth';
 
 const Secret = () => {
     const {data, loading} = useGetUser();
@@ -32,4 +33,22 @@ const Secret = () => {
 
 }
 
-export default Secret;
+
+// traditional syntax
+
+// function withAuth(Component) {
+//     return function (props) {
+//         return <Component title="" {...props}/>
+//     }
+
+
+// }
+
+// // arrow function syntax
+// const withAuth = (Component) =props => <Component title="" {...props}/>
+    
+
+
+
+
+export default withAuth(Secret);
