@@ -1,6 +1,6 @@
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
-import auth0 from '@/utils/auth0';
+import {authorizedUser} from '@/utils/auth0';
 
 const SecretSSR = ({user}) => {
     
@@ -16,19 +16,28 @@ const SecretSSR = ({user}) => {
 
     }
 
-    // Server-side authentication
+
+    // Server-side redirect
     export const getServerSideProps = async ({req, res}) => {
-        const session = await auth0.getSession(req);
-        if(!session ||!session.user) {
-            res.writeHead(302, {
-                location:'/api/v1/login'
-            });
-            res.end();
-            return{props:{}};
-        }
+        const user = await authorizedUser(req, res);
+
         return {
-            props:{user:session.user}
+            props: {user}
         }
+        
+
+        
+        // const session = await auth0.getSession(req);
+        // if(!session ||!session.user) {
+        //     res.writeHead(302, {
+        //         location:'/api/v1/login'
+        //     });
+        //     res.end();
+        //     return{props:{}};
+        // }
+        // return {
+        //     props:{user:session.user}
+        // }
     }
 
     export default SecretSSR;
