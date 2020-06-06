@@ -18,6 +18,11 @@ const auth0 =  initAuth0({
 
 export default auth0;
 
+export const isAuthorized = (user, role) => {
+  debugger
+  return (user && user[ AUTH0_NAMESPACE + '/roles'].includes(role))
+}
+
 export const authorizedUser = async (req, res) => {
   const session = await auth0.getSession(req);
   if(!session ||!session.user) {
