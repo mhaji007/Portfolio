@@ -18,6 +18,7 @@ const withAuth = Component => role => {
             
         }else {
             
+            // checks for user role on the client side
             if(role && !isAuthorized(data,role)) {
 
                  return <Redirect ssr to="/api/v1/login"/>

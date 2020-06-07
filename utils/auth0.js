@@ -18,9 +18,10 @@ const auth0 =  initAuth0({
 
 export default auth0;
 
+// Function for checking authorization and role on the client side
 export const isAuthorized = (user, role) => {
   debugger
-  return (user && user[ AUTH0_NAMESPACE + '/roles'].includes(role))
+  return (user && user['https://portfolio-hajikhani.com' + '/roles'].includes(role))
 }
 
 export const authorizedUser = async (req, res) => {
@@ -37,9 +38,11 @@ export const authorizedUser = async (req, res) => {
   
 }
 
-export const withAuth = (getData) => async ({req, res}) => {
+export const withAuth = getData => role => async ({req, res}) => {
   const session = await auth0.getSession(req);
-  if (!session || !session.user) {
+      // checks for user role on the server side
+  if (!session || !session.user || (role && !isAuthorized(session.user,role))) {
+ 
     res.writeHead(302, {
       Location: '/api/v1/login'
     });
@@ -50,4 +53,4 @@ export const withAuth = (getData) => async ({req, res}) => {
   const data = getData ? await getData({req, res}, session.user) : {};
 
   return {props: {user: session.user, ...data}}
-}
+  }

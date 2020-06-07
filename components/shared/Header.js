@@ -69,6 +69,9 @@ const Header = ({user, loading}) => {
                         <NavItem className="port-navbar-item">
                             <BsNavLink href="/onlyAdmin" title="Admin"/>
                         </NavItem>
+                        <NavItem className="port-navbar-item">
+                            <BsNavLink href="/onlyAdminssr" title="AdminSSR"/>
+                        </NavItem>
                     </Nav>
                     <Nav navbar className="ml-auto">
                         {
