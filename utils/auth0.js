@@ -21,7 +21,7 @@ export default auth0;
 // Function for checking authorization and role on the client side
 export const isAuthorized = (user, role) => {
   debugger
-  return (user && user['https://portfolio-hajikhani.com' + '/roles'].includes(role))
+  return (user && user[process.env.AUTH0_NAMESPACE + '/roles'].includes(role))
 }
 
 export const authorizedUser = async (req, res) => {
