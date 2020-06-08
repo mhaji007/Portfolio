@@ -1,28 +1,20 @@
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import Link from 'next/link';
-import {useGetPosts} from '@/actions'; 
-//import {useGetData} from '@/actions'; // - used if not using SWR
 import {useGetUser} from '@/actions/user';
+import PortfolioApi from '@/lib/api/portfolios';
 
-const Portfolios = () => {
+const Portfolios = ({portfolios}) => {
 
-  const {data, error, loading} = useGetPosts();
-  
-  // const {data, error, loading} = useGetData('/api/v1/posts'); // - used if not using SWR
   
    const {data:dataU, loading:loadingU} = useGetUser();
 
-    const renderPosts = (posts) => {
-        return posts.map(
-            post => <li
-                key={post.id}
-                style={{
-                    'fontSize' : '20px'
-                }}>
-                <Link as={`/portfolios/${post.id}`} href="/portfolios/[id]">
+   const renderPortfolios = (portfolios) => {
+    return portfolios.map(portfolio =>
+      <li key={portfolio._id} style={{'fontSize': '20px'}}>
+        <Link as={`/portfolios/${portfolio._id}`} href="/portfolios/[id]">
                     <a>
-                        {post.title}
+                        {portfolio.title}
                     </a>
                 </Link>
             </li>
@@ -34,22 +26,23 @@ const Portfolios = () => {
         user ={dataU}
         loading = {loadingU}>
             <BasePage>
-                <h1>
-                    I am Portfolio Page
-                </h1>
-                {loading && <p>Loading data...</p>}
-                {
-                    data && <ul>
-                            {renderPosts(data)}
-                        </ul>
-                }
-                {
-                    error && <div className="alert alert-danger">{error.message}
-                        </div>
-                }
+            <ul>
+          {renderPortfolios(portfolios)}
+            </ul>
             </BasePage>
         </BaseLayout>
     )
 }
 
+// Called during the build time
+// Improves page performance 
+// Will create static page with dynamic data
+
+export async function getStaticProps() {
+    const json = await new PortfolioApi().getAll();
+    const portfolios = json.data;
+    return {
+      props: { portfolios }
+    }
+  }
 export default Portfolios;
