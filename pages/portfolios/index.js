@@ -5,7 +5,6 @@ import {useGetUser} from '@/actions/user';
 import PortfolioApi from '@/lib/api/portfolios';
 
 const Portfolios = ({portfolios}) => {
-
   
    const {data:dataU, loading:loadingU} = useGetUser();
 
@@ -40,9 +39,10 @@ const Portfolios = ({portfolios}) => {
 
 export async function getStaticProps() {
     const json = await new PortfolioApi().getAll();
-    const portfolios = json.data;
+    const portfolios = json?.data || [];
     return {
       props: { portfolios }
     }
   }
+  
 export default Portfolios;
