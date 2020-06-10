@@ -29,7 +29,7 @@ const BsNavLink = props => {
     )
 }
 
-const Header = ({user, loading}) => {
+const Header = ({user, loading, className}) => {
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen)
@@ -37,8 +37,7 @@ const Header = ({user, loading}) => {
     return (
         <div>
             <Navbar
-                className="port-navbar port-default absolute"
-                color="transparent"
+                className={`port-navbar port-default absolute ${className}`}
                 dark
                 expand="md">
                 <BsNavBrand/>
