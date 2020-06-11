@@ -42,6 +42,10 @@ const Portfolio = ({portfolio}) => {
 
 // Executed at build time
 // Prerenders dynamic pages
+// By combining getStaticPaths and getStaticProps
+// We can take advantage of both static optimization 
+// and dynamic rendering
+// Statically optimized and also have the dynamic data
 export async function getStaticPaths() {
     const json = await new PortfolioApi().getAll();
     const portfolios = json.data;
