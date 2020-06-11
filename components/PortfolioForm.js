@@ -1,10 +1,31 @@
 import {Row, Col} from 'reactstrap';
 import DatePicker from 'react-datepicker';
+import {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
 
 const PortfolioForm = ({onSubmit}) => {
+    const [startDate, setStartDate] = useState(null);
+    const [endDate, setEndDate] = useState(null);
+    const {register, handleSubmit, setValue} = useForm();
 
-    const {register, handleSubmit} = useForm();
+    useEffect(()=> {
+        register({name:'startDate'});
+        register({name: 'endDate'});
+    }, [register])
+
+    // const handleStartDate = (date) => {
+    //     setStartDate(date);
+    //     setValue('startDate', date.toISOString())
+    // }
+    // const handleEndDate = (date) => {
+    //     setEndDate(date);
+    //     setValue('endDate', date.toISOString())
+    // }
+
+    const handleDateChange = (dateType, setDate) => date => {
+        setValue(dateType, date);
+        setDate(date);
+    }
 
     return (
 
@@ -81,8 +102,9 @@ const PortfolioForm = ({onSubmit}) => {
                             <div>
                             <DatePicker
                             showYearDropDown
-                            selected={new Date()}
-                            onChange={() => {}}
+                            selected={startDate}
+                            //onChange={handleStartDate}
+                            onChange={handleDateChange('startDate', setStartDate)}
                             />
                             </div>
                         </div>
@@ -92,8 +114,9 @@ const PortfolioForm = ({onSubmit}) => {
                             <div>
                             <DatePicker
                             showYearDropDown
-                            selected={new Date()}
-                            onChange={() => {}}
+                            selected={endDate}
+                            //onChange={handleEndDate}
+                            onChange={handleDateChange('endDate', setEndDate)}
                             />
                             </div>
                         </div>
