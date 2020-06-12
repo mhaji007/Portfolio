@@ -1,3 +1,5 @@
+// Serverless funciton - Contains auth0 portfolio creation functionality
+
 // import axios from 'axios'
 import PortfolioApi from '@/lib/api/portfolios';
 

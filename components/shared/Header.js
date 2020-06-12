@@ -8,12 +8,13 @@ const BsNavBrand = () => <Link href="/">
     <a className="navbar-brand port-navbar-brand">Mehdi Hajikhani</a>
 </Link>
 
+// Navigates to /api/v1/login serverless funciton that deals with authentication
 const LoginLink = () =>
 //<BsNavLink href="/api/v1/login" title="login"/>
 <span >
     <a className="nav-link port-navbar-link clickable" href="/api/v1/login">Login</a>
 </span>
-
+// Navigates to /api/v1/login serverless funciton that deals with authentication
 const LogoutLink = () =>
 // <span className="nav-link port-navbar-link clickable"> //Logout</span>
 <span >

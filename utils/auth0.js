@@ -1,3 +1,5 @@
+// Auth0 runtime configuration
+
 import { initAuth0 } from '@auth0/nextjs-auth0';
 
 
