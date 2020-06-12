@@ -3,7 +3,7 @@ import {Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
 import {useGetUser} from '@/actions/user';
 
-const ROLES = ["Developer", "Student", "UFO enthusiast :)"]
+const ROLES = ["Developer", "Designer", "Perpetual Student"]
 
 const Index = () => {
 
@@ -34,7 +34,7 @@ const Index = () => {
                                                 Have a look at my portfolio and job history
                                             </div>
                                         </div>
-                                        <img className="image" src="/images/Icon-02.jpg"/>
+                                        <img className="image" src="/images/Icon-03.jpg"/>
                                         <div className="shadow-custom">
                                             <div className="shadow-inner"></div>
                                         </div>
@@ -45,8 +45,8 @@ const Index = () => {
                         <Col md="6" className="hero-welcome-wrapper">
                             <div className="hero-welcome-text">
                                 <h1>
-                                    <p>Welcome to my website!<br/>
-                                        Get informed, collaborate and discover projects I was working on through the
+                                    Welcome to my website!<br/><br/>
+                                    <p> Get informed, collaborate and discover projects I was working on through the
                                         years!
                                     </p>
                                 </h1>
