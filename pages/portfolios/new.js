@@ -2,10 +2,13 @@ import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import withAuth from '@/components/hoc/withAuth';
 import PortfolioForm from '@/components/PortfolioForm';
-import {createPortfolio} from '@/actions/portfolios'
+//import {createPortfolio} from '@/actions/portfolios'
+import {useCreatePortfolio} from '@/actions/portfolios'
 
 
 const PortfolioNew = ({user, loading: userLoading}) => {
+
+    const [createPortfolio, {data, loading, error}] = useCreatePortfolio();
 
     const _createPortfolio = (data) => {
         createPortfolio(data)
