@@ -25,7 +25,7 @@ const Portfolio = ({portfolio}) => {
 
             </BasePage>
         </BaseLayout>
-    );
+    );  
 }
 
 

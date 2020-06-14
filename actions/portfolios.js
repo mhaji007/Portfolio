@@ -1,5 +1,7 @@
 import axios from 'axios';
 //import {useState} from 'react';
+import useSWR from 'swr';
+import {fetcher} from '@/actions';
 
 import {useApiHandler} from '@/actions';
 
@@ -32,3 +34,10 @@ export function useCreatePortfolio() {
     // return [createPortfolioHandler, {...reqState}];
 }
 
+
+export const useGetPortfolio = (id) => {
+    const { data, error, ...rest} = useSWR(id ? `/api/v1/portfolios/${id}` : null, fetcher);
+    return { data, error, loading: !data && !error, ...rest};
+  }
+
+  
