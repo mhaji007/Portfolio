@@ -1,5 +1,7 @@
 import axios from 'axios';
-import {useState} from 'react';
+//import {useState} from 'react';
+
+import {useApiHandler} from '@/actions';
 
 export function createPortfolio (data) {
     return axios.post('/api/v1/portfolios', data);
@@ -7,24 +9,26 @@ export function createPortfolio (data) {
 
 export function useCreatePortfolio() {
 
-    const [reqState, setReqState] = useState({
-        error: null,
-        data: null,
-        loading: false
-    });
+    return useApiHandler(createPortfolio);
 
-    const createPortfolioHandler = async (...data) => {
-            setReqState({error: null, data: null, loading:true});
+    // const [reqState, setReqState] = useState({
+    //     error: null,
+    //     data: null,
+    //     loading: false
+    // });
+
+    // const createPortfolioHandler = async (...data) => {
+    //         setReqState({error: null, data: null, loading:true});
         
-            try {
-                const json = await createPortfolio(...data);
-                setReqState({error:null, data: json.data, loading:false})
-            } catch(e){
-                const message = (e.response && e.response.message) ||'Oops, somehting went wrong...'
-                setReqState({error: message, data:null, loading:false})
-            }
-    }
+    //         try {
+    //             const json = await createPortfolio(...data);
+    //             setReqState({error:null, data: json.data, loading:false})
+    //         } catch(e){
+    //             const message = (e.response && e.response.message) ||'Oops, somehting went wrong...'
+    //             setReqState({error: message, data:null, loading:false})
+    //         }
+    // }
 
-    return [createPortfolioHandler, {...reqState}];
+    // return [createPortfolioHandler, {...reqState}];
 }
 
