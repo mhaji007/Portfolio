@@ -12,6 +12,7 @@ export default async function createPortfolio(req, res) {
         // await axios.post(process.env.PORTFOLIO_API_URI + '/portfolios', data);
         return res.json(json.data);
     }catch(e){
-        return res.status(e.status || 400).end(e.message);
+        // return res.status(e.status || 400).end(e.message);
+        return res.status(e.status || 422).json(e.response.data);
     }
 }
