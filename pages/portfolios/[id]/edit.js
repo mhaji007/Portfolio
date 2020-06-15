@@ -6,23 +6,32 @@ import {useRouter} from 'next/router';
 import {useGetPortfolio} from '@/actions/portfolios';
 import {Row, Col} from 'reactstrap';
 import { useUpdatePortfolio} from '@/actions/portfolios';
+import { toast } from 'react-toastify';
 
 const PortfolioEdit = ({user}) => {
     const router = useRouter();
     //const {data} = useGetPortfolio(router.query.id);
 
-    const [updatePortfolio, {
-            data,
-            error,
-            loading
-        }
-    ] = useUpdatePortfolio();
-    debugger
-    const {data: initialData} = useGetPortfolio(router.query.id);
+    // const [updatePortfolio, {
+    //         data,
+    //         error,
+    //         loading
+    //     }
+    // ] = useUpdatePortfolio();
+    
+    const [ updatePortfolio, {error}] = useUpdatePortfolio();
+    const { data: initialData } = useGetPortfolio(router.query.id);
 
-    const _updatePortfolio = (data) => {
-        updatePortfolio(router.query.id, data);
-    }
+    
+    // const _updatePortfolio = (data) => {
+    //     updatePortfolio(router.query.id, data);
+    // }
+
+    const _updatePortfolio = async (data) => {
+        await updatePortfolio(router.query.id, data);
+        toast.success('Portfolio has been updated!', {autoClose: 2000})
+      }
+
 
     // const {data:portfolio, error, loading} = useGetUser();
     // useGetData(router.query.id?`/api/v1/posts/${router.query.id}`:null);  -  used
