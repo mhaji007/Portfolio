@@ -9,6 +9,8 @@ export function createPortfolio (data) {
     return axios.post('/api/v1/portfolios', data);
 }
 
+const updatePortfolio = (id, data) => axios.patch(`/api/v1/portfolios/${id}`, data);
+
 export function useCreatePortfolio() {
 
     return useApiHandler(createPortfolio);
@@ -33,6 +35,8 @@ export function useCreatePortfolio() {
 
     // return [createPortfolioHandler, {...reqState}];
 }
+
+export const useUpdatePortfolio = () => useApiHandler(updatePortfolio);
 
 
 export const useGetPortfolio = (id) => {
