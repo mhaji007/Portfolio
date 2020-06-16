@@ -2,11 +2,13 @@ import {Row, Col} from 'reactstrap';
 import DatePicker from 'react-datepicker';
 import {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
+import ParticleEffectButton from 'react-particle-effect-button'
 
 // const PortfolioForm = ({onSubmit}) => {
     const PortfolioForm = ({onSubmit, initialData = {}}) => {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
+    const [hidden, setHidden] = useState(false);
     //const {register, handleSubmit, setValue} = useForm();
     const { register, handleSubmit, setValue } = useForm({defaultValues: initialData});
 
@@ -148,11 +150,16 @@ import {useForm} from 'react-hook-form';
                             }
 
                         </div>
-                        <button
-                            type="submit"
-                            className="btn btn-primary">
-                                Create
-                        </button>
+
+                        <ParticleEffectButton
+                                color='#121019'
+                                hidden={hidden}>                    
+                                <button onClick={() => setHidden(true)}
+                                    type="submit"
+                                    className="btn btn-primary">
+                                        Create
+                                </button>
+                        </ParticleEffectButton>
                     </form>
                 </Col>
             </Row>
