@@ -18,7 +18,7 @@ const PortfolioEdit = ({user}) => {
     //         loading
     //     }
     // ] = useUpdatePortfolio();
-    
+
     const [ updatePortfolio, {error}] = useUpdatePortfolio();
     const { data: initialData } = useGetPortfolio(router.query.id);
 
@@ -28,8 +28,20 @@ const PortfolioEdit = ({user}) => {
     // }
 
     const _updatePortfolio = async (data) => {
-        await updatePortfolio(router.query.id, data);
-        toast.success('Portfolio has been updated!', {autoClose: 2000})
+        //try {
+            //   await updatePortfolio(router.query.id, data);
+            //   toast.success('Portfolio has been updated!', {autoClose: 2000})
+            // } catch {
+            //   toast.error('Ooops some error!', {autoClose: 2000})
+            // }
+        
+            // updatePortfolio(router.query.id, data)
+            //   .then(() => toast.success('Portfolio has been updated!', {autoClose: 2000}))
+            //   .catch(() => toast.error('Ooops some error!', {autoClose: 2000}))
+        
+            await updatePortfolio(router.query.id, data);
+            toast.success('Portfolio has been updated!', {autoClose: 2000})
+        
       }
 
 
@@ -50,6 +62,9 @@ const PortfolioEdit = ({user}) => {
                                     // initialData={data}
                                     onSubmit={_updatePortfolio} initialData={initialData}/>
                         }
+                                    { error &&
+              <div className="alert alert-danger mt-2">{error}</div>
+            }
                     </Col>
                 </Row>
             </BasePage>
@@ -62,7 +77,8 @@ export default withAuth(PortfolioEdit)('admin');
 // ==========================================================================================================================
 // Here for edit page fetching data is done client side. Statically generated
 // but No to need to render on the build time here   Fetch portfolio details
-// serverside  export async function getServerSideProps({query}) {      const
+// serverside 
+// export async function getServerSideProps({query}) {      const
 // json = await new PortfolioApi().getById(query.id);      const portfolio =
 // json.data;      return {props:{portfolio}};  }  Executed at build time
 // Prerenders dynamic pages  By combining getStaticPaths and getStaticProps  We

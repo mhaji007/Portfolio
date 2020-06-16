@@ -34,7 +34,8 @@ export function useApiHandler(apiCall) {
             } catch(e){
                 console.log(e);
                 const message = (e.response && e.response.data) ||'Oops, somehting went wrong...'
-                setReqState({error: message, data:null, loading:false})
+                setReqState({error: message, data:null, loading:false});
+                return Promise.reject(message)
             }
     }
 
