@@ -4,8 +4,9 @@ import {useRouter} from 'next/router';
 import {useGetUser} from '@/actions/user';
 import PortfolioApi from '@/lib/api/portfolios';
 import PortfolioCard from '@/components/PortfolioCard';
+import { isAuthorized } from '@/utils/auth0';
 
-import {Row, Col } from 'reactstrap';
+import {Row, Col, Button } from 'reactstrap';
 const Portfolios = ({portfolios}) => {
    const router = useRouter();
    const {data:dataU, loading:loadingU} = useGetUser();
@@ -37,7 +38,21 @@ const Portfolios = ({portfolios}) => {
                     router.push('/portfolios/[id]', `/portfolios/${portfolio._id}`)
                    }}  
                    md="4">
-                      <PortfolioCard portfolio={portfolio}/>
+                    <PortfolioCard
+                        portfolio={portfolio}>
+                        { dataU && isAuthorized(dataU, 'admin') &&
+                          <>
+                            <Button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                router.push('/portfolios/[id]/edit', `/portfolios/${portfolio._id}/edit`)
+                              }}
+                              className="mr-2"
+                              color="secondary">Edit</Button>
+                            <Button color="danger">Delete</Button>
+                          </>
+                        }
+                    </PortfolioCard>
                   </Col>
                         )
                   }
