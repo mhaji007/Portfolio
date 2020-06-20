@@ -10,6 +10,7 @@ export function createPortfolio (data) {
 }
 
 const updatePortfolio = (id, data) => axios.patch(`/api/v1/portfolios/${id}`, data);
+const deletePortfolio = (id) => axios.delete(`/api/v1/portfolios/${id}`);
 
 export function useCreatePortfolio() {
 
@@ -37,6 +38,7 @@ export function useCreatePortfolio() {
 }
 
 export const useUpdatePortfolio = () => useApiHandler(updatePortfolio);
+export const useDeletePortfolio = () => useApiHandler(deletePortfolio);
 
 
 export const useGetPortfolio = (id) => {
