@@ -45,9 +45,8 @@ const Index = () => {
                         <Col md="6" className="hero-welcome-wrapper">
                             <div className="hero-welcome-text">
                                 <h1>
-                                    Welcome to my website!<br/><br/>
-                                    <p> Get informed, collaborate and discover projects I was working on through the
-                                        years!
+                                    Hello, I'm Mehdi<br/><br/>
+                                    <p>
                                     </p>
                                 </h1>
                             </div>
