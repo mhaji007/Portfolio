@@ -1,12 +1,11 @@
-import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import withAuth from '@/components/hoc/withAuth';
-import {Editor} from 'slate-simple-editor';
-import {useCreateBlog} from '@/actions/blogs';
-import {toast} from 'react-toastify';
+import BaseLayout from '@/components/layouts/BaseLayout';
+import { Editor } from 'slate-simple-editor';
+import { useCreateBlog } from 'actions/blogs';
+import { toast } from 'react-toastify';
 
 const BlogEditor = ({user, loading}) => {
-
   const [createBlog, {data: createdBlog, error}] = useCreateBlog();
 
   const saveBlog = async data => {
@@ -15,12 +14,13 @@ const BlogEditor = ({user, loading}) => {
   }
 
   if (error) { toast.error(error.message); }
-
-
+  
   return (
-    <BaseLayout user={user} loading={loading}>
+<BaseLayout user={user} loading={loading}>
       <BasePage>
-        <Editor header="Blog away!" onSave={saveBlog}/>
+        { typeof window !== 'undefined' &&
+          <Editor header="Blog away!" onSave={saveBlog}/>
+        }
       </BasePage>
     </BaseLayout>
   )

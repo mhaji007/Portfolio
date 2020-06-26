@@ -50,13 +50,13 @@ const AdminMenu = () => {
     return (
         <Dropdown
             className="port-navbar-link port-dropdown-menu"
-            nav="nav"
+            nav
             isOpen={isOpen}
             toggle={() => setIsOpen(!isOpen)}>
-            <DropdownToggle className="port-dropdown-toggle" nav="nav" caret="caret">
+            <DropdownToggle className="port-dropdown-toggle" nav caret>
                 Admin
             </DropdownToggle>
-            <DropdownMenu right="right">
+            <DropdownMenu right>
                 <DropdownItem>
                     <BsNavLink
                         className="port-dropdown-item"
@@ -89,12 +89,12 @@ const Header = ({user, loading, className}) => {
         <div>
             <Navbar
                 className={`port-navbar port-default absolute ${className}`}
-                dark="dark"
+                dark
                 expand="md">
                 <BsNavBrand/>
                 <NavbarToggler onClick={toggle}/>
-                <Collapse isOpen={isOpen} navbar="navbar">
-                    <Nav navbar="navbar">
+                <Collapse isOpen={isOpen} navbar>
+                    <Nav navbar>
                         <NavItem className="port-navbar-item">
                             <BsNavLink href="/" title="Home"/>
                         </NavItem>
@@ -124,7 +124,7 @@ const Header = ({user, loading, className}) => {
                         </NavItem> */
                         }
                     </Nav>
-                    <Nav navbar="navbar" className="ml-auto">
+                    <Nav navbar className="ml-auto">
                         {
                             !loading && <> {
                                 user && <> {
