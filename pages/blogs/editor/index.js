@@ -16,7 +16,7 @@ const BlogEditor = ({user, loading}) => {
   if (error) { toast.error(error.message); }
   
   return (
-<BaseLayout user={user} loading={loading}>
+      <BaseLayout user={user} loading={loading}>
       <BasePage>
         { typeof window !== 'undefined' &&
           <Editor header="Blog away!" onSave={saveBlog}/>
