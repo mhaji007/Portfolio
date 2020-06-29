@@ -34,7 +34,7 @@ const Index = () => {
                                                 Have a look at my portfolio and job history
                                             </div>
                                         </div>
-                                        <img className="image" src="/images/Icon-03.jpg"/>
+                                        <img className="image" src="/images/Icon-02.jpg"/>
                                         <div className="shadow-custom">
                                             <div className="shadow-inner"></div>
                                         </div>
