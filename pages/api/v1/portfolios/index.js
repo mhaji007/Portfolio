@@ -8,7 +8,8 @@ export default async function createPortfolio(req, res) {
     try {
         const {accessToken} = await auth0.getSession(req);
 
-        const json = await new PortfolioApi(accessToken).createPortfolio(req.body)
+        // const json = await new PortfolioApi(accessToken).createPortfolio(req.body)
+        const json = await new PortfolioApi(accessToken).create(req.body);
         // await axios.post(process.env.PORTFOLIO_API_URI + '/portfolios', data);
         return res.json(json.data);
     }catch(e){

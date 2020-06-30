@@ -6,6 +6,7 @@
 // Pages
 @import './index';
 @import './portfolios';
+@import './blogs';
 
 html, body {
     height: 100%;
@@ -43,4 +44,12 @@ html, body {
 }
 
 
-
+.slate-container {
+    .editor-header {
+        .save-button-container {
+            .btn-success {
+                background-color: #6c76bf;
+            }
+        }
+    }
+}
