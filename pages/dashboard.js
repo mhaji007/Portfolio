@@ -1,15 +1,12 @@
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import withAuth from '@/components/hoc/withAuth';
-//import { withAuth } from 'utils/auth0';
 import { Row, Col} from 'reactstrap';
 import Masthead from 'components/shared/Masthead';
 import PortDropdown from 'components/shared/Dropdown';
 import Link from 'next/link';
 import { useUpdateBlog, useGetUserBlogs } from 'actions/blogs';
 import { toast } from 'react-toastify';
-import auth0 from 'utils/auth0';
-import BlogApi from 'lib/api/blogs';
 
 const Dashboard = ({user, loading}) => {
 

@@ -8,9 +8,9 @@ const Masthead = ({imagePath}) =>
       <Row>
         <div className="col-lg-8 col-md-10 mx-auto">
           <div className="site-heading">
-            <h1>Blogs Dashboard</h1>
+            <h1>Got something on your mind?</h1>
             <span className="subheading">
-              Got something on your mind?{' '}
+              Have it heard{' '}
                 <Link href='/blogs/editor'>
                 <Button color="primary">Create a new Blog</Button>
               </Link></span>
