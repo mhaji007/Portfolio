@@ -1,7 +1,7 @@
 import BaseLayout from '@/components/layouts/BaseLayout';
 import BasePage from '@/components/BasePage';
 import withAuth from '@/components/hoc/withAuth';
-import { Row, Col} from 'reactstrap';
+import { Row, Col, Button } from 'reactstrap';
 import Masthead from 'components/shared/Masthead';
 import PortDropdown from 'components/shared/Dropdown';
 import Link from 'next/link';
@@ -60,7 +60,15 @@ const Dashboard = ({user, loading}) => {
   )
   return (
     <BaseLayout navClass="transparent" user={user} loading={loading}>
-      <Masthead imagePath="/images/background-index.PNG" />
+            <Masthead imagePath="/images/background-index.PNG">
+        <h1>Got something to say?</h1>
+        <span className="subheading">
+          Let your voice be heard{' '}
+            <Link href='/blogs/editor'>
+            <Button color="primary">Create a new Blog</Button>
+          </Link>
+        </span>
+      </Masthead>
       <BasePage className="blog-user-page">
         <Row>
           <Col md="6" className="mx-auto text-center">
