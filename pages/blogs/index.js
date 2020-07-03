@@ -4,7 +4,6 @@ import { useGetUser } from '@/actions/user';
 import Masthead from 'components/shared/Masthead';
 import { Row, Col } from 'reactstrap';
 import BlogItem from 'components/BlogItem';
-import Link from 'next/link';
 import BlogApi from 'lib/api/blogs';
 
 const Blogs = ({blogs}) => {
@@ -14,9 +13,9 @@ const Blogs = ({blogs}) => {
     <BaseLayout
       navClass="transparent" className="blog-listing-page"
       user={data} loading={loading}>
-      <Masthead imagePath="/images/home-bg.jpg">
+      <Masthead imagePath="/images/background-index.PNG">
         <h1>Fresh Blogs</h1>
-        <span className="subheading">Programming, travelling...</span>
+        <span className="subheading">Served Daily</span>
       </Masthead>
       <BasePage
         className="blog-body">
