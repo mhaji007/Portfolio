@@ -15,6 +15,8 @@ const Dashboard = ({user, loading}) => {
 
   const changeBlogStatus = async (blogId, status) => {
     updateBlog(blogId, {status})
+    // TODO: Fix - below line causes error
+    // updateBlog(blogId, {status, title:''})
       .then(() => mutate())
       .catch(() => toast.error('Something went wrong...'));
   }
@@ -33,8 +35,14 @@ const Dashboard = ({user, loading}) => {
       handlers: {
         onClick: () => changeBlogStatus(blog._id, option.value)}
     },
-      {key: `${blog._id}-delete`,text: 'Delete', handlers: { onClick: () => {alert(`Clicking Delete! ${blog._id}`)}}}
+      //{key: `${blog._id}-delete`,text: 'Delete', handlers: { onClick: () => {alert(`Clicking Delete! ${blog._id}`)}}}
+      { key: `${blog._id}-delete`,
+      text: 'Delete',
+      handlers: {
+        onClick: () => changeBlogStatus(blog._id, 'deleted')}
+      }
     ]
+  
 
   }
   const renderBlogs = (blogs, status) => (
