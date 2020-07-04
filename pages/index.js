@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import BaseLayout from '@/components/layouts/BaseLayout';
 import {Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
@@ -7,14 +8,28 @@ const ROLES = ["Developer", "Designer", "Perpetual Student"]
 
 const Index = () => {
 
+    const [isFlipping, setIsFlipping] = useState(false);
     const {data, loading} = useGetUser();
+
+    const flipInterval = useRef();
+
+    useEffect(() => {
+      startAnimation();
+      return () => flipInterval.current && clearInterval(flipInterval.current)
+    }, []);
+  
+    const startAnimation = () => {
+      flipInterval.current = setInterval(() => {
+        setIsFlipping(prevFlipping => !prevFlipping);
+      }, 20000);
+    }
 
     return (
         <BaseLayout
         user ={data}
         loading = {loading}
         navClass="transparent"
-        className="cover">
+        className={`cover ${isFlipping ? 'cover-orange' : 'cover-blue'}`}>
             <div className="main-section">
                 <div className="background-image">
                     <img src="/images/background-index.png"/>
@@ -24,8 +39,9 @@ const Index = () => {
                     <Row>
                         <Col md="6">
                             <div className="hero-section">
-                                <div className={`flipper`}>
-                                    <div className="back">
+                            <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
+                                    <div className="front">
+                                        
                                         <div className="hero-section-content">
                                             <h2>
                                                 Full Stack Web Developer
@@ -39,6 +55,18 @@ const Index = () => {
                                             <div className="shadow-inner"></div>
                                         </div>
                                     </div>
+                                    <div className="back">
+                    <div className="hero-section-content">
+                      <h2> Full Stack Web Developer </h2>
+                      <div className="hero-section-content-intro">
+                        Have a look at my portfolio and job history.
+                      </div>
+                    </div>
+                    <img className="image" src="/images/section-2.JPG"/>
+                    <div className="shadow-custom shadow-custom-orange">
+                      <div className="shadow-inner"> </div>
+                    </div>
+                  </div>
                                 </div>
                             </div>
                         </Col>
