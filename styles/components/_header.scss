@@ -64,5 +64,13 @@
       margin-left: 10px;
       margin-right: 10px;
     }
+
   }
 }
+        .port-navbar.transparent.is-open {
+          background-color: #6c76bf;
+        }
+        
+        .port-navbar.transparent.is-close {
+          transition: 1s;
+        }

@@ -21,7 +21,7 @@ const Index = () => {
     const startAnimation = () => {
       flipInterval.current = setInterval(() => {
         setIsFlipping(prevFlipping => !prevFlipping);
-      }, 2000);
+      }, 20000);
     }
 
     return (
@@ -29,7 +29,8 @@ const Index = () => {
         user ={data}
         loading = {loading}
         navClass="transparent"
-        className={`cover ${isFlipping ? 'cover-orange' : 'cover-blue'}`}>
+        //className={`cover ${isFlipping ? 'cover-orange' : 'cover-blue'}`}>
+            className={`cover cover-blue`}>
             <div className="main-section">
                 <div className="background-image">
                     <img src="/images/background-index.png"/>
