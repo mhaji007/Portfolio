@@ -48,7 +48,7 @@ const Index = () => {
                                                 Full Stack Web Developer
                                             </h2>
                                             <div className="hero-section-content-intro">
-                                                Have a look at my portfolio and job history
+                                                {/* Have a look at my portfolio and job history */}
                                             </div>
                                         </div>
                                         <img className="image" src="/images/Icon-02.jpg"/>
@@ -60,7 +60,6 @@ const Index = () => {
                     <div className="hero-section-content">
                       <h2> Full Stack Web Developer </h2>
                       <div className="hero-section-content-intro">
-                        Have a look at my portfolio and job history.
                       </div>
                     </div>
                     <img className="image" src="/images/section-2.JPG"/>
