@@ -12,6 +12,8 @@ import {
     DropdownItem
 } from 'reactstrap';
 
+import ActiveLink from 'components/shared/ActiveLink';
+
 import Link from 'next/link';
 import {isAuthorized} from '@/utils/auth0';
 import ReactResizeDetector from 'react-resize-detector';
@@ -40,9 +42,9 @@ const BsNavLink = props => {
         className = ''
     } = props;
     return (
-        <Link href={href}>
+        <ActiveLink activeClassName="active" href={href}>
             <a className={`nav-link port-navbar-link ${className}`}>{title}</a>
-        </Link>
+        </ActiveLink>
     )
 }
 

@@ -32,7 +32,7 @@ const About = () => {
             <div className="left-side">
               {/* <h1 className={`title ${createFadeInClass()}`}>Hello, Welcome</h1>
               <h4 className={`subtitle ${createFadeInClass()}`}>To About Page</h4> */}
-              <p className={`subsubTitle ${createFadeInClass()}`}><img className="image" src="/images/Icon-02.jpg"/></p>
+              <p className={`subsubTitle ${createFadeInClass()}`}><img className="image" src="/images/about.jpg"/></p>
             </div>
           </Col>
           <Col md="6">
