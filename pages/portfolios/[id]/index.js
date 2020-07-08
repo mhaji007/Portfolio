@@ -18,7 +18,9 @@ const Portfolio = ({portfolio}) => {
         <BaseLayout
         user ={dataU}
         loading = {loadingU}>
-            <BasePage header = "Portfolio Details">
+                  <BasePage
+        title={`${portfolio.title} - Mehdi Hajikhani`}
+        header="Portfolio Detail">
                 {
                     JSON.stringify(portfolio)
                 }

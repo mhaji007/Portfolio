@@ -42,6 +42,7 @@ const Portfolios = ({portfolios: initialPortfolios}) => {
       user ={dataU}
       loading = {loadingU}>
             <BasePage
+            title="Portfolios - Mehdi Hajikhani"
             header="Portfolios"
             className="portfolio-page">
               <Row>
