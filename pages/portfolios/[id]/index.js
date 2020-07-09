@@ -20,7 +20,8 @@ const Portfolio = ({portfolio}) => {
         loading = {loadingU}>
                   <BasePage
         title={`${portfolio.title} - Mehdi Hajikhani`}
-        header="Portfolio Detail">
+        header="Portfolio Detail"
+        metaDescription={portfolio.description}>
                 {
                     JSON.stringify(portfolio)
                 }
