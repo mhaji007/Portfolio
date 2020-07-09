@@ -3,6 +3,7 @@ import BasePage from '@/components/BasePage';
 //import {useGetData} from '@/actions'; // -  used if not using SWR
 //import {useGetPostById} from '@/actions';
 import {useGetUser} from '@/actions/user';
+import { formatDate } from 'helpers/functions';
 import PortfolioApi from '@/lib/api/portfolios';
 
 
@@ -26,12 +27,12 @@ const Portfolio = ({portfolio}) => {
        <div className="portfolio-detail">
           <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <main role="main" class="inner page-cover">
-              <h1 class="cover-heading">Title</h1>
-              <p class="lead dates">dates</p>
-              <p class="lead info mb-0">jobTitle | company | location</p>
-              <p class="lead">description</p>
+            <h1 class="cover-heading">{portfolio.title}</h1>
+              <p class="lead dates">{formatDate(portfolio.startDate)} - {formatDate(portfolio.endDate) || 'Present'}</p>
+              <p class="lead info mb-0">{portfolio.jobTitle} | {portfolio.company} | {portfolio.location}</p>
+              <p class="lead">{portfolio.description}</p>
               <p class="lead">
-                <a href="#" class="btn btn-lg btn-secondary">Visit Company</a>
+              <a href={portfolio.companyWebsite} target="_" class="btn btn-lg btn-secondary">Visit Company</a>
               </p>
             </main>
           </div>
