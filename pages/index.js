@@ -45,29 +45,31 @@ const Index = () => {
                             <div className="hero-section">
                                 <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
                                     <div className="front">   
-                                        <div className="hero-section-content">
-                                            <h2>
-                                                Full Stack Web Developer
-                                            </h2>
-                                            <div className="hero-section-content-intro">
-                                                {/* Have a look at my portfolio and job history */}
+                                        <div className="image image-1"> {/* src="/images/Icon-02.jpg"> */}
+                                            <div className="hero-section-content">
+                                                <h2>
+                                                    Full Stack Web Developer
+                                                </h2>
+                                                <div className="hero-section-content-intro">
+                                                    {/* Have a look at my portfolio and job history */}
+                                                </div>
                                             </div>
                                         </div>
-                                        <img className="image" src="/images/Icon-02.jpg"/>
                                         <div className="shadow-custom">
                                             <div className="shadow-inner"></div>
                                         </div>
                                     </div>
-                                    <div className="back">
-                                        <div className="hero-section-content">
-                                        <h2> Full Stack Web Developer 
-
-                                        </h2>
-                                        <div className="hero-section-content-intro">
-                                               {/* Have a look at my portfolio and job history */}
+                                    <div className="back">   
+                                        <div className="image image-1"> {/* src="/images/Icon-02.jpg"> */}
+                                            <div className="hero-section-content">
+                                                <h2>
+                                                    Full Stack Web Developer
+                                                </h2>
+                                                <div className="hero-section-content-intro">
+                                                    {/* Have a look at my portfolio and job history */}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                        <img className="image" src="/images/section-2.JPG"/>
                                         <div className="shadow-custom shadow-custom-orange">
                                             <div className="shadow-inner"> </div>
                                         </div>
@@ -95,7 +97,7 @@ const Index = () => {
                                 cursorChar="|"></Typed>
                             <div className="hero-welcome-bio">
                                 <h1>
-                                    Let's take a peek at my work while you are here
+                                     Let's connect, communicate, and collaborate.
                                 </h1>
                             </div>
                         </Col>
