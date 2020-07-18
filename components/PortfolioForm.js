@@ -18,10 +18,10 @@ import ParticleEffectButton from 'react-particle-effect-button';
         if (endDate) { setEndDate(new Date(endDate))}
       }, [initialData])
 
-    // useEffect(()=> {
-    //     register({name:'startDate'});
-    //     register({name: 'endDate'});
-    // }, [register])
+    useEffect(()=> {
+        register({name:'startDate'});
+        register({name: 'endDate'});
+    }, [register])
 
     // const handleStartDate = (date) => {
     //     setStartDate(date);

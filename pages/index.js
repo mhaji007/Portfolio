@@ -45,7 +45,7 @@ const Index = () => {
                             <div className="hero-section">
                                 <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
                                     <div className="front">   
-                                        <div className="image image-1"> {/* src="/images/Icon-02.jpg"> */}
+                                        <div className="image image-2"> {/* src="/images/Icon-02.jpg"> */}
                                             <div className="hero-section-content">
                                                 <h2>
                                                     Full Stack Web Developer
