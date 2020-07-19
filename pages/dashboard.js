@@ -60,7 +60,7 @@ const Dashboard = ({user, loading}) => {
   )
   return (
     <BaseLayout navClass="transparent" user={user} loading={loading}>
-            <Masthead imagePath="/images/background-index.PNG">
+      <Masthead imagePath="/images/background-index.png">
         <h1>Got something to say?</h1>
         <span className="subheading">
           Let your voice be heard{' '}

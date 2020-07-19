@@ -13,7 +13,7 @@ const Blogs = ({blogs}) => {
     <BaseLayout
       navClass="transparent" className="blog-listing-page"
       user={data} loading={loading}>
-      <Masthead imagePath="/images/background-index.PNG">
+      <Masthead imagePath="/images/background-index.png">
         <h1>Fresh Blogs</h1>
         <span className="subheading">Served Daily</span>
       </Masthead>

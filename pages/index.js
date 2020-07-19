@@ -22,7 +22,7 @@ const Index = () => {
     const startAnimation = () => {
       flipInterval.current = setInterval(() => {
         setIsFlipping(prevFlipping => !prevFlipping);
-      }, 20000);
+      }, 10000);
     }
 
     return (

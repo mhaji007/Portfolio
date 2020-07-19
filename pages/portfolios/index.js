@@ -89,7 +89,7 @@ const Portfolios = ({portfolios: initialPortfolios}) => {
     const portfolios = json?.data || [];
     return {
       props: { portfolios },
-      unstable_revalidate: 1
+      unstable_revalidate: 30
     }
   }
   
