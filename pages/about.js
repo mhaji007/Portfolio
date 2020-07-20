@@ -45,9 +45,12 @@ const About = () => {
                 hold another bachelor's in Petroleum Engineering.
               </p>
               <p>
-              I have experience programming in different languages such as C, Java, PHP, JavaScript
-               as well as designing and creating user interfaces for websites and mobile applications using React.js and React Native.
-               In my free time, I enjoy playing the piano, drawing and watching documentaries.
+               I have experience programming in different languages such as C, Java, PHP, JavaScript.
+               I am also expereinced in designing and creating websites and mobile applications using React.js and React Native.
+               More recently I have been focused on developing serverside web applications using Next.js. 
+              </p>
+              <p>
+               In my free time, I enjoy playing the piano, drawing portraits and watching documentaries.
               </p>
             </div>
           </Col>

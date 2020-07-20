@@ -97,7 +97,7 @@ const Index = () => {
                                 cursorChar="|"></Typed>
                             <div className="hero-welcome-bio">
                                 <h1>
-                                     Let's connect, communicate, and collaborate.
+                                    Let's connect and make something special.
                                 </h1>
                             </div>
                         </Col>
