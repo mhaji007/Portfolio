@@ -152,8 +152,12 @@
   // }
 
   @media (max-width: 992px) {
+    .hero-welcome-wrapper  {
+      padding-left: 150px;
+    }
+
     .hero-section {
-      width: 330px;
+      width: 440px;
 
       &-content {
         width: 330px;
@@ -189,4 +193,10 @@
   .shadow-custom-orange {
     box-shadow: -17px 13px 41px rgba(13,78,158,0.3);
     order: 2px solid #d9c9f8;
+  }
+
+  @media(max-width: 767px) {
+    .hero-welcome-wrapper  {
+      padding-left:inherit;
+    }
   }

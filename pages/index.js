@@ -5,7 +5,7 @@ import {Container, Row, Col} from 'reactstrap';
 import Typed from 'react-typed';
 import {useGetUser} from '@/actions/user';
 
-const ROLES = ["Developer", "Designer", "Perpetual Student"]
+const ROLES = ["Developer", "Engineer", "Perpetual Student"]
 
 const Index = () => {
 
@@ -18,11 +18,11 @@ const Index = () => {
       startAnimation();
       return () => flipInterval.current && clearInterval(flipInterval.current)
     }, []);
-  
+
     const startAnimation = () => {
       flipInterval.current = setInterval(() => {
         setIsFlipping(prevFlipping => !prevFlipping);
-      }, 10000);
+      }, 6000);
     }
 
     return (
@@ -33,7 +33,7 @@ const Index = () => {
         //className={`cover ${isFlipping ? 'cover-orange' : 'cover-blue'}`}>
             className={`cover cover-blue`}>
                 <BasePage indexPage>
-                
+
                     <div className="main-section">
                         <div className="background-image">
                             <img src="/images/background-index.png"/>
@@ -44,7 +44,7 @@ const Index = () => {
                         <Col md="6">
                             <div className="hero-section">
                                 <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
-                                    <div className="front">   
+                                    <div className="front">
                                         <div className="image image-2"> {/* src="/images/Icon-02.jpg"> */}
                                             <div className="hero-section-content">
                                                 <h2>
@@ -59,7 +59,7 @@ const Index = () => {
                                             <div className="shadow-inner"></div>
                                         </div>
                                     </div>
-                                    <div className="back">   
+                                    <div className="back">
                                         <div className="image image-1"> {/* src="/images/Icon-02.jpg"> */}
                                             <div className="hero-section-content">
                                                 <h2>
