@@ -18,10 +18,6 @@
 .front, .back {
   width: 100%;
   height: 100%;
- // had to set these to pixel value
- // so the image would not get cut off
-  // width: 100%;
-  // height: 530px;
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -201,13 +197,6 @@
     }
   }
 
-  // @media(max-width: 767px) {
-  //   .hero-welcome-wrapper  {
-
-  //     padding-left:inherit;
-  //   }
-  // }
-
   @media(max-width: 512px) {
 
   .hero-section {
@@ -218,7 +207,6 @@
   .hero-welcome-wrapper {
     position: absolute;
     top: 50%;
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
 
