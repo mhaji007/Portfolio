@@ -200,3 +200,27 @@
       padding-left:inherit;
     }
   }
+
+  // @media(max-width: 767px) {
+  //   .hero-welcome-wrapper  {
+
+  //     padding-left:inherit;
+  //   }
+  // }
+
+  @media(max-width: 512px) {
+
+  .hero-section {
+
+    display: none;
+  }
+
+  .hero-welcome-wrapper {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+
+  }
