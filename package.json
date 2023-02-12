@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@auth0/nextjs-auth0": "^1.4.2",
+    "@auth0/nextjs-auth0": "^2.2.1",
     "axios": "^0.21.2",
     "bootstrap": "^4.5.0",
     "dotenv-webpack": "^1.8.0",
